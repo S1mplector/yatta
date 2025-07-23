@@ -11,7 +11,7 @@ import com.animetui.domain.port.MediaPlayerPort;
 import com.animetui.infrastructure.config.AppConfig;
 import com.animetui.infrastructure.player.MpvPlayerAdapter;
 import com.animetui.infrastructure.scraper.JikanAnimeScraper;
-import com.animetui.infrastructure.scraper.StubLinkResolver;
+import com.animetui.infrastructure.scraper.LinkResolverFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -55,9 +55,7 @@ public class Main {
     }
     
     private static LinkResolver createLinkResolver(ConfigPort config) {
-        // For now, use stub resolver
-        // In the future, this could be configured to use different resolvers
-        return new StubLinkResolver();
+        return LinkResolverFactory.create(config);
     }
     
     private static MediaPlayerPort createMediaPlayer(ConfigPort config) {

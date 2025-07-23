@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 public record Episode(
     String id,
     String animeId,
+    String animeTitle,  // Add anime title for better LinkResolver integration
     int number,
     String title,
     String description,

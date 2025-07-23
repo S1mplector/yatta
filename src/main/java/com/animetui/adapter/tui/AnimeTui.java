@@ -222,7 +222,7 @@ public class AnimeTui {
             );
             
             if (selectedIndex >= 0) {
-                playSelectedEpisode(episodes.get(selectedIndex));
+                playSelectedEpisode(episodes.get(selectedIndex), animeDto.title());
             }
             
         } catch (Exception e) {
@@ -231,12 +231,12 @@ public class AnimeTui {
         }
     }
     
-    private void playSelectedEpisode(EpisodeDto episodeDto) {
+    private void playSelectedEpisode(EpisodeDto episodeDto, String animeTitle) {
         ViewHelpers.printInfo("Starting playback for: " + formatEpisodeDisplay(episodeDto));
         ViewHelpers.showLoading("Resolving stream links");
         
         try {
-            Episode episode = convertToEpisode(episodeDto);
+            Episode episode = convertToEpisode(episodeDto, animeTitle);
             playEpisode.execute(episode);
             ViewHelpers.clearLoading();
             ViewHelpers.printSuccess("Episode playback started!");
@@ -291,7 +291,7 @@ public class AnimeTui {
         return wrapped.toString();
     }
     
-    private Episode convertToEpisode(EpisodeDto dto) {
+    private Episode convertToEpisode(EpisodeDto dto, String animeTitle) {
         LocalDateTime airDate = null;
         if (dto.airDate() != null && !dto.airDate().isEmpty()) {
             try {
@@ -304,6 +304,7 @@ public class AnimeTui {
         return new Episode(
             dto.id(),
             dto.animeId(),
+            animeTitle, // Now we properly pass the anime title
             dto.number(),
             dto.title(),
             dto.description(),

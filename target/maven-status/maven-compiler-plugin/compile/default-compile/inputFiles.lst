@@ -18,5 +18,9 @@ C:\Users\Sim\Desktop\Projects\yatta\src\main\java\com\animetui\domain\port\LinkR
 C:\Users\Sim\Desktop\Projects\yatta\src\main\java\com\animetui\domain\port\MediaPlayerPort.java
 C:\Users\Sim\Desktop\Projects\yatta\src\main\java\com\animetui\infrastructure\config\AppConfig.java
 C:\Users\Sim\Desktop\Projects\yatta\src\main\java\com\animetui\infrastructure\player\MpvPlayerAdapter.java
+C:\Users\Sim\Desktop\Projects\yatta\src\main\java\com\animetui\infrastructure\scraper\FallbackLinkResolver.java
+C:\Users\Sim\Desktop\Projects\yatta\src\main\java\com\animetui\infrastructure\scraper\HiAnimeLinkResolver.java
 C:\Users\Sim\Desktop\Projects\yatta\src\main\java\com\animetui\infrastructure\scraper\JikanAnimeScraper.java
+C:\Users\Sim\Desktop\Projects\yatta\src\main\java\com\animetui\infrastructure\scraper\LinkResolverFactory.java
+C:\Users\Sim\Desktop\Projects\yatta\src\main\java\com\animetui\infrastructure\scraper\RealisticMockLinkResolver.java
 C:\Users\Sim\Desktop\Projects\yatta\src\main\java\com\animetui\infrastructure\scraper\StubLinkResolver.java

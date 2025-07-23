@@ -221,6 +221,9 @@ public class JikanAnimeScraper implements AnimeRepository {
         String thumbnailUrl = null;
         // Jikan API doesn't provide episode thumbnails in the basic endpoint
         
-        return new Episode(id, animeId, number, title, description, duration, airDate, thumbnailUrl);
+        // We need to get the anime title - this will require a separate call or caching
+        String animeTitle = "Unknown"; // Placeholder for now
+        
+        return new Episode(id, animeId, animeTitle, number, title, description, duration, airDate, thumbnailUrl);
     }
 }
